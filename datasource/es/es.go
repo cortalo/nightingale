@@ -141,6 +141,22 @@ func (e *Elasticsearch) Equal(other datasource.Datasource) bool {
 		return false
 	}
 
+	if e.Version != other.(*Elasticsearch).Version {
+		return false
+	}
+
+	if e.Timeout != other.(*Elasticsearch).Timeout {
+		return false
+	}
+
+	if e.MinInterval != other.(*Elasticsearch).MinInterval {
+		return false
+	}
+
+	if e.MaxShard != other.(*Elasticsearch).MaxShard {
+		return false
+	}
+
 	return true
 }
 
